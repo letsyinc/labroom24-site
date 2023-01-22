@@ -11,7 +11,7 @@ body {
 }
 
 a.nav-link {
-    color: white;
+    color: white !important;
     font-family: 'Roboto' !important;
     display: block;
     padding: 0.5rem 1rem;
@@ -21,7 +21,7 @@ a.nav-link {
 
 
 a.nav-link:hover {
-    color: #8c52ff;
+    color: #8c52ff !important;
 }
 
 
@@ -89,7 +89,7 @@ a.nav-link:hover {
 
 .brand-a {
     font-family: 'Roboto' !important;
-    font-size: 100px !important;
+    font-size: 7rem !important;
     color: #8c52ff	 !important; /*buff brown */
     width: 100% !important;
     padding: 50px;
@@ -101,6 +101,11 @@ a.nav-link:hover {
     text-align: center;
 }
 
+
+.navbar .navbar-collapse {
+    text-align: center;
+  }
+  
 .brand-h1 {
     margin-top: 0px;
     width: 100%;
@@ -123,6 +128,10 @@ h5 {
 }
 
 
+.bg-dark {
+    background-color: black !important;
+}
+
 h4 span {
     background:white; 
     padding:0 10px; 
@@ -132,7 +141,6 @@ h4 span {
     /* opacity: 0.6; */
 }
 
-
 @media only screen and (min-width: 992px) {
     .navbar {
         flex-direction: column;
@@ -140,6 +148,14 @@ h4 span {
 
     .navbar .navbar-nav {
         /* border-bottom */
+    }
+}
+
+
+
+@media only screen and (max-width: 730px) {
+    .brand-a {
+        font-size: 2.5rem !important;
     }
 }
 
