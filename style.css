@@ -77,8 +77,11 @@ a.nav-link:hover {
 .line_break {
     color: black; 
     font-size: 25px; 
-    margin: 20px; 
-    margin-left: 30px;
+    margin: 10px; 
+}
+
+li.line_break {
+    margin-left: 20px;
 }
 
 .headline h1 {
@@ -172,6 +175,26 @@ h4 span {
         font-size: 32px !important;
     }
 
+
+
+}
+
+@media only screen and (max-width: 990px) {
+    .block-1-1 {
+        color: white;
+        padding: 50px;
+        /* margin: 30px; */
+    }
+}
+
+.block-1-1 {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    word-spacing: 10000px !important; 
+
+    /* margin: 30px; */
 }
 
 .navbar .navbar-nav {
@@ -192,9 +215,9 @@ h4 span {
 
 
 
-/* .card {
-    margin: 10px;
-} */
+.col-md {
+    margin-bottom: 20px !important;
+}
 
 
 /* .col {
@@ -308,17 +331,10 @@ div.row.sameHeight {
     margin-bottom: 50px;
 }
 
-div.col-lg.sameHeight {
-    /* display: grid;
-    grid-auto-flow: column; */
-    /* flex-basis: 30%; */
-    /* box-sizing: border-box; */
-    /* border: solid; */
-}
 
 .sameHeightCard {
     height: 100%;
-    height: 200px;
+    /* height: 200px; */
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: space-between; */
@@ -328,7 +344,9 @@ div.col-lg.sameHeight {
 .block-1 {
     height: auto;
     /* width: 100%; */
+
 }
+
 
 .block-2 {
     padding: 0px;
