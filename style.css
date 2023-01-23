@@ -8,6 +8,8 @@ html {
 
 body {
     margin: 0px;
+    /* padding-top: 60px; */
+    background-color: #f8fcfd !important;
 }
 
 a.nav-link {
