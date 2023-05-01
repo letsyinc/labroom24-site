@@ -1,5 +1,5 @@
 /* a.navLinks.active {
-    color: #8c52ff;
+    color: #009B77;
 } */
 html {
     /* background: black; */
@@ -9,12 +9,13 @@ html {
 body {
     margin: 0px;
     /* padding-top: 60px; */
-    background-color: #f8fcfd !important;
+    background-color: #faf9f6 !important;
+
 }
 
 a.nav-link {
-    color: white !important;
-    font-family: 'Roboto' !important;
+    color: black !important;
+    font-family: "Haffer",sans-serif !important;
     display: block;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -23,7 +24,7 @@ a.nav-link {
 
 
 a.nav-link:hover {
-    color: #8c52ff !important;
+    color: #009B77 !important;
 }
 
 
@@ -71,9 +72,12 @@ a.nav-link:hover {
     margin-bottom: 0.2rem;
     /* line-height:0; */
     text-align: center;
-    color: #8c52ff;
+    /* color: #8c52ff; */
+    color: #009B77;
     padding-bottom: 10px;
-    font-family: 'Roboto' !important;
+    /* font-family: 'Roboto' !important; */
+    font-family: "Haffer",sans-serif !important;
+
 }
 
 .line_break {
@@ -84,6 +88,7 @@ a.nav-link:hover {
 
 li.line_break {
     margin-left: 20px;
+    font-size: 16px;
 }
 
 .headline h1 {
@@ -102,7 +107,7 @@ li.line_break {
 .brand-a {
     font-family: 'Roboto' !important;
     font-size: 7rem !important;
-    color: #8c52ff	 !important; /*buff brown */
+    color: #009B77	 !important; /*buff brown */
     width: 100% !important;
     padding: 50px;
     margin: 0px;
@@ -148,7 +153,7 @@ h4 span {
     background:white; 
     padding:0 10px; 
     /* color: #a6a6a6	 !important;  */
-    color: #8c52ff	 !important; 
+    color: #009B77	 !important; 
     font-family: 'Roboto' !important;
     /* opacity: 0.6; */
 }
@@ -163,7 +168,36 @@ h4 span {
     }
 }
 
+.image_slider_image {
+    font-family: 'Roboto' !important;
+    border: 0.5px solid #A6A6A6;
+    /* margin-right: 20px; */
+    margin: 20px;
+    border-radius: 10px;
+    color: #009B77;
+    background: linear-gradient(to right,
+    #9b7600,
+    #A6A6A6);
+    -webkit-background-clip: text;
+    color: transparent;
+    
+}
 
+
+.location {
+    /* height: 400px; */
+    width: 100%;
+    /* text-align: center; */
+    padding: 100px;
+    padding-right: 40%;
+    color: white;
+    overflow: hidden;
+    /* background: black;  fallback for old browsers */
+    background: linear-gradient(rgb(0,0,0,0.9), rgb(0,0,0,0.9)), url("./images/playground-y4k5bPA2eJc-unsplash.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0,0.7)), url("./images/playground-y4k5bPA2eJc-unsplash.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 @media only screen and (max-width: 730px) {
     .brand-a {
@@ -175,6 +209,9 @@ h4 span {
     }
     h1.line_break {
         font-size: 32px !important;
+    }
+    .location {
+        padding-right: 10%;
     }
 
 
@@ -238,7 +275,7 @@ h4 span {
 .brand-footer {
     font-family: 'Roboto' !important;
     font-size: 30px !important;
-    color: #8c52ff	 !important; /*buff brown */
+    color: #009B77	 !important; /*buff brown */
     /* height: 40px; */
     width: 100% !important;
     /* padding: 20px; */
@@ -254,11 +291,11 @@ h4 span {
 }
 
 .fa-brands {
-    color: white;
+    color: black;
 }
 
 a:hover .fa-brands {
-    color: #8c52ff;
+    color: #009B77;
 }
 
 
@@ -272,7 +309,7 @@ a:hover .fa-brands {
 .solutions {
     /* height: 500px; */
     background-color: white;
-    border-top: 1px solid #8c52ff;
+    border-top: 1px solid #009B77;
     padding: 10px;
     /* width: 75%; */
 }
@@ -308,7 +345,7 @@ a:hover .fa-brands {
 }
 
 h5.card-title {
-    color:#8c52ff;
+    color:#009B77;
     border-bottom: none;
     /* text-align: center;
     height: 0.5rem; */
@@ -333,6 +370,9 @@ div.row.sameHeight {
     margin-bottom: 50px;
 }
 
+.card {
+    border-radius: 1.25rem !important;
+}
 
 .sameHeightCard {
     height: 100%;
@@ -363,7 +403,7 @@ ul {
 }
 
 .fa-circle-check {
-    color: #8c52ff;
+    color: #009B77;
 }
 
 li {
@@ -372,16 +412,16 @@ li {
 
 
 .footer-top  {
-    /* border-top: 1px solid #8c52ff; */
+    /* border-top: 1px solid #009B77; */
     background-color: black;
     color: white;
 }
 
 .footer-bottom {
-    /* border-top: 1px solid #8c52ff; */
+    /* border-top: 1px solid #009B77; */
     /* background-color: rgb(39, 39, 39); */
     /* color: white; */
-    background: #f8fcfd;
+    background: white;
     color: black;
     /* height: 70px; */
 }
@@ -398,18 +438,26 @@ li {
 }
 
 .btn-outline-primary {
-    background-color: #8c52ff !important;
-    color: white !important;
+    background-color: white !important;
+    color: #9b7600 !important;
+    border-color: #9b7600 !important;
+    border: 1px solid #9b7600;
     align-items: center;
     justify-content: center;
 
 }
 
+.btn {
+    color: #9b7600 !important;
+}
+
 
 
 .btn-outline-primary:hover, .btn-outline-primary:active {
-    background-color: #732cff !important;
-    /* background-color: #8c52ff !important; */
+    background-color: #9b7600 !important;
+    color: white !important;
+
+    /* background-color: #009B77 !important; */
 
     /* color: grey !important; */
 }
@@ -422,3 +470,76 @@ li {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 
+.slide_container {
+    overflow: auto;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    /* Here is where you set a size so it will be visible. */
+    /* width: 200px;
+    height: 300px; */
+    animation: slideshow 10s linear infinite;
+    /* position: absolute; */
+    /* left: 0;
+    top: 0; */
+    /* height: 100%; */
+    /* width: 300%; */
+
+}
+
+
+
+@keyframes slideshow {
+    0% {
+      left: 0;
+    }
+  
+    100% {
+      left: -100%;
+    }
+  }
+
+
+  
+.how_it_works ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox to align items horizontally */
+  }
+
+.how_it_works li {
+    display: inline-block; /* Display items as inline blocks */
+    width: 33%; /* Set the width of each item to 33% for three columns */
+    text-align: center; /* Center the content of each item */
+}
+
+
+.how_it_works {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.how_it_works .icon {
+    display: inline-block;
+    border: 2px solid #ccc;
+    color: #009B77;
+    /* backg */
+    border-color: #009B77;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.how_it_works i {
+    font-size: 1rem;
+    margin: 0 1rem;
+}
+
+.col-md-2-5 { width: 20,83333%; } /* = 16,6666 + 4,16667 */
