@@ -1,29 +1,20 @@
-<<<<<<< Updated upstream
 /* a.navLinks.active {
     color: #009B77;
 } */
 html {
     /* background: black; */
-=======
-@font-face {
-    font-family: 'Pilatwide';
-    src: url('fonts/pilatwide/Pilatwide-Book.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
->>>>>>> Stashed changes
 }
 
+
 body {
-<<<<<<< Updated upstream
     margin: 0px;
     /* padding-top: 60px; */
     background-color: #faf9f6 !important;
-
 }
 
 a.nav-link {
     color: black !important;
-    font-family: "Haffer",sans-serif !important;
+    font-family: 'Roboto' !important;
     display: block;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -83,9 +74,7 @@ a.nav-link:hover {
     /* color: #8c52ff; */
     color: #009B77;
     padding-bottom: 10px;
-    /* font-family: 'Roboto' !important; */
-    font-family: "Haffer",sans-serif !important;
-
+    font-family: 'Roboto' !important;
 }
 
 .line_break {
@@ -96,7 +85,6 @@ a.nav-link:hover {
 
 li.line_break {
     margin-left: 20px;
-    font-size: 16px;
 }
 
 .headline h1 {
@@ -176,36 +164,7 @@ h4 span {
     }
 }
 
-.image_slider_image {
-    font-family: 'Roboto' !important;
-    border: 0.5px solid #A6A6A6;
-    /* margin-right: 20px; */
-    margin: 20px;
-    border-radius: 10px;
-    color: #009B77;
-    background: linear-gradient(to right,
-    #9b7600,
-    #A6A6A6);
-    -webkit-background-clip: text;
-    color: transparent;
-    
-}
 
-
-.location {
-    /* height: 400px; */
-    width: 100%;
-    /* text-align: center; */
-    padding: 100px;
-    padding-right: 40%;
-    color: white;
-    overflow: hidden;
-    /* background: black;  fallback for old browsers */
-    background: linear-gradient(rgb(0,0,0,0.9), rgb(0,0,0,0.9)), url("./images/playground-y4k5bPA2eJc-unsplash.jpg");  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0,0.7)), url("./images/playground-y4k5bPA2eJc-unsplash.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 @media only screen and (max-width: 730px) {
     .brand-a {
@@ -217,9 +176,6 @@ h4 span {
     }
     h1.line_break {
         font-size: 32px !important;
-    }
-    .location {
-        padding-right: 10%;
     }
 
 
@@ -318,26 +274,10 @@ a:hover .fa-brands {
     /* height: 500px; */
     background-color: white;
     border-top: 1px solid #009B77;
-=======
-    margin: 0;
-    padding: 0;
-    font-family: 'Pilatwide', Arial, sans-serif;
-    overflow: hidden; /* Prevent scrollbars */
-}
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    background-color: white;
->>>>>>> Stashed changes
     padding: 10px;
-}
-.navbar a {
-    color: #333;
-    text-decoration: none;
-    margin: 0 15px;
+    /* width: 75%; */
 }
 
-<<<<<<< Updated upstream
 
 
 /* div.projectsContainer.container-fluid {
@@ -394,9 +334,6 @@ div.row.sameHeight {
     margin-bottom: 50px;
 }
 
-.card {
-    border-radius: 1.25rem !important;
-}
 
 .sameHeightCard {
     height: 100%;
@@ -462,31 +399,17 @@ li {
 }
 
 .btn-outline-primary {
-    background-color: white !important;
-    color: #9b7600 !important;
-    border-color: #9b7600 !important;
-    border: 1px solid #9b7600;
-=======
-.container {
-    /* display: flex; */
->>>>>>> Stashed changes
+    background-color: #009B77 !important;
+    color: white !important;
     align-items: center;
     justify-content: center;
-    /* height: 100vh; */
-    margin-top: 7vh;
-}
 
-<<<<<<< Updated upstream
-.btn {
-    color: #9b7600 !important;
 }
 
 
 
 .btn-outline-primary:hover, .btn-outline-primary:active {
-    background-color: #9b7600 !important;
-    color: white !important;
-
+    background-color: #732cff !important;
     /* background-color: #009B77 !important; */
 
     /* color: grey !important; */
@@ -500,118 +423,3 @@ li {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 
-.slide_container {
-    overflow: auto;
-    white-space: nowrap;
-    position: relative;
-    overflow: hidden;
-    /* Here is where you set a size so it will be visible. */
-    /* width: 200px;
-    height: 300px; */
-    animation: slideshow 10s linear infinite;
-    /* position: absolute; */
-    /* left: 0;
-    top: 0; */
-    /* height: 100%; */
-    /* width: 300%; */
-
-}
-
-
-
-@keyframes slideshow {
-    0% {
-      left: 0;
-    }
-  
-    100% {
-      left: -100%;
-    }
-  }
-
-
-  
-.how_it_works ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Use flexbox to align items horizontally */
-  }
-
-.how_it_works li {
-    display: inline-block; /* Display items as inline blocks */
-    width: 33%; /* Set the width of each item to 33% for three columns */
-    text-align: center; /* Center the content of each item */
-}
-
-
-.how_it_works {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.how_it_works .icon {
-    display: inline-block;
-    border: 2px solid #ccc;
-    color: #009B77;
-    /* backg */
-    border-color: #009B77;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-.how_it_works i {
-    font-size: 1rem;
-    margin: 0 1rem;
-}
-
-.col-md-2-5 { width: 20,83333%; } /* = 16,6666 + 4,16667 */
-=======
-.content {
-    text-align: left;
-    /* margin-top: 3vh; */
-    padding: 0 5vw;
-}
-.main-content {
-    text-align: center;
-    padding: 20px;
-}
-.main-image {
-    max-width: 110vh;
-    display: block;
-    /* height: 60vh */
-    max-height: 70vh;
-    margin: 0 auto;
-}
-.title {
-    font-size: 4vh;
-    margin-top: 2lvh;
-}
-.tagline {
-    font-size: 3vh;
-    margin: 1vh 0;
-    color: #87CEEB;
-}
-.links {
-    margin-top: 20px;
-    display: flex;
-    /* justify-content: center; */
-    /* flex-direction: row; */
-    flex-wrap: wrap;
-}
-.links a {
-    /* display: block; */
-    font-size: 2.5vh;
-    /* margin: 0 2vh; */
-    margin-right: 2vh;
-    color: #333;
-}
-
->>>>>>> Stashed changes
