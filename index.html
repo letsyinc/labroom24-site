@@ -3,29 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAB ROOM</title>
+    <title>LAB ROOM: Business Intelligence Partner</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <div class="navbar">
+    <!-- <div class="navbar">
         <a href="#">NEWS</a>
         <a href="#">ABOUT</a>
         <a href="#">CONTACT</a>
         <a href="#">GITHUB</a>
         <a href="#">MEDIUM</a>
-    </div>
-    <div class="container">
-        <img class="main-image" src="images/main_photo.jpg" alt="Lab Room">
-        <div class="content">
-            <h1>LAB ROOM</h1>
-            <div class="tagline">Elevating Business with Data-Driven Insights</div>
-            <div class="links">
-                <a href="#">Music</a>
-                <a href="#">Media</a>
-                <a href="#">Beauty</a>
-                <a href="#">Health & Wellness</a>
+    </div> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NEWS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact_us.html">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">GITHUB</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MEDIUM</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container content">
+        <!-- <div class="content position-relative"> -->
+            <!-- <img class="main-image" src="images/main_photo.jpg" alt="Lab Room"> -->
+            <!-- <div class="position-absolute d-flex flex-column align-items-end justify-content-center" style="top: 0; right: 0; bottom: 0; left: 0;">
+                <a href="#" class="btn btn-sm btn-secondary mx-2 mb-2">Button 1</a>
+                <a href="#" class="btn btn-sm btn-secondary mx-2 mb-2">Button 2</a>
+            </div> -->
+        <!-- </div> -->
+        <!-- <div class="content"> -->
+        <!-- <div class="main-image-container d-flex justify-content-end align-items-center">
+            <div class="btn-overlay">
+                <a href="#" class="btn btn-secondary btn-arrow">Button 1 &rarr;</a>
+                <a href="#" class="btn btn-secondary btn-arrow">Button 2 &rarr;</a>
+            </div>
+        </div> -->
+        <div class="main-image-container position-relative" id="mainImage">
+            <div class="btn-overlay position-absolute top-0 end-0 mt-3 mr-3">
+                <a href="#" class="btn custom-btn-secondary btn-arrow btn-brown" id="showFormBtn2">DataBites & Delights Newsletter &rarr;</a>
+                <a href="#" class="btn custom-btn-secondary btn-arrow btn-brown" id="showFormBtn3">What's New ? &rarr;</a>
             </div>
         </div>
+
+        <!-- Subscription Form -->
+        <div class="subscription-form" id="subscriptionForm">
+            <!-- Buttons in the same location as the form -->
+            <div class="btn-overlay">
+                <a href="#" class="btn custom-btn-secondary-2 btn-arrow btn-brown" id="showFormBtn1">Main &rarr;</a>
+                <a href="#" class="btn custom-btn-secondary-2 btn-arrow btn-brown" id="showFormBtn3_2">What's New ? &rarr;</a>
+            </div>
+            <!-- Your subscription form template goes here -->
+            <form>
+                <!-- Add form elements here (e.g., input fields, labels, and a submit button) -->
+                <h2>Subscribe to DataBites and Delights</h2>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Two Photos Side by Side with Buttons Overlay -->
+        <div class="photo-container" id="photoContainer">
+            <!-- Septermebr Interests and Learning Objectives  -->
+             <div class="photo-button">
+                <a href="#" class="btn custom-btn-secondary-2 btn-arrow btn-brown" id="showFormBtn1_2">Main &rarr;</a>
+                <a href="#" class="btn custom-btn-secondary-2 btn-arrow btn-brown" id="showFormBtn2_2">DataBites & Delights Newsletter &rarr;</a>     
+            </div>
+        </div>
+
+
+        
+        <h1>LAB ROOM <sub style="font-size: 1.2rem"> Business Intelligence Partner</sub> </h1>
+        <div class="tagline">Elevating Business with Decision Intelligence</div>
+        <div class="links">
+            <a href="#">Music</a>
+            <a href="#">Marketing</a>
+            <a href="#">Finance</a>
+            <a href="#">Beauty</a>
+            <a href="#">Health & Wellness</a>
+        </div>
+        <!-- </div> -->
+
     </div>
+
+
+
+    <script>
+        // JavaScript to toggle the subscription form
+        const showFormBtn1 = document.getElementById('showFormBtn1');
+        const showFormBtn2 = document.getElementById('showFormBtn2');
+        const showFormBtn3 = document.getElementById('showFormBtn3');
+        const showFormBtn1_2 = document.getElementById('showFormBtn1_2');
+        const showFormBtn2_2 = document.getElementById('showFormBtn2_2');
+        const showFormBtn3_2 = document.getElementById('showFormBtn3_2');
+        const subscriptionForm = document.getElementById('subscriptionForm');
+        const photoContainer = document.getElementById('photoContainer');
+        const mainImage = document.getElementById('mainImage');
+
+        subscriptionForm.style.display = 'none';
+        photoContainer.style.display = 'none';
+
+        // Main
+        showFormBtn1.addEventListener('click', () => {
+            mainImage.style.display = 'block';
+            subscriptionForm.style.display = 'none';
+            photoContainer.style.display = 'none';
+        });
+
+        showFormBtn1_2.addEventListener('click', () => {
+            mainImage.style.display = 'block';
+            subscriptionForm.style.display = 'none';
+            photoContainer.style.display = 'none';
+        });
+
+        // DataBites and Delights
+        showFormBtn2.addEventListener('click', () => {
+            mainImage.style.display = 'none';
+            subscriptionForm.style.display = 'block';
+            photoContainer.style.display = 'none';
+        });
+        showFormBtn2_2.addEventListener('click', () => {
+            mainImage.style.display = 'none';
+            subscriptionForm.style.display = 'block';
+            photoContainer.style.display = 'none';
+        });
+
+        // What's Mew ?
+        showFormBtn3.addEventListener('click', () => {
+            mainImage.style.display = 'none';
+            subscriptionForm.style.display = 'none';
+            photoContainer.style.display = 'flex'; // Use 'flex' to show the photo container
+        });
+        showFormBtn3_2.addEventListener('click', () => {
+            mainImage.style.display = 'none';
+            subscriptionForm.style.display = 'none';
+            photoContainer.style.display = 'flex'; // Use 'flex' to show the photo container
+        });
+    </script>
 </body>
 </html>
