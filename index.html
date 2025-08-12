@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Culinary Compass provides data-driven solutions for Toronto restaurants. We help you optimize labor costs, reduce waste, and increase profitability with predictive AI insights.">
-    <title>Culinary Compass - Data-Driven Restaurant Profitability</title>
+    <meta name="description" content="Margin Mind provides data-driven solutions for Toronto restaurants. We help you optimize labor costs, reduce waste, and increase profitability with predictive AI insights.">
+    <title>Margin Mind - Data-Driven Restaurant Profitability</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,8 +21,9 @@
         }
         @font-face {
             font-family: 'Aeonik';
-            src: url('fonts/Aeonik-Bold.woff2') format('woff2'),
-                 url('fonts/Aeonik-Bold.woff') format('woff');
+            /* src: url('fonts/Aeonik-Bold.woff2') format('woff2'), */
+                 /* url('fonts/Aeonik-Bold.woff') format('woff'), */
+            src: url('fonts/Aeonik-Bold.tff') format('tff');
             font-weight: 700;
             font-style: normal;
             font-display: swap;
@@ -282,6 +283,18 @@
             line-height: 1.7;
             color: var(--text-color-dark-secondary);
         }
+        .card-category {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: var(--primary-color); /* You can choose a different color here */
+            margin-bottom: 0.5rem;
+            display: block; /* Ensures it sits on its own line above the h3 */
+        }
+
+        .innovation-card h3, .problem-point h3 {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
         .innovation-section .cta-text {
             font-size: 1.1em;
             text-align: center;
@@ -409,6 +422,7 @@
             .case-study-grid { grid-template-columns: 1fr; }
             .testimonials-grid { grid-template-columns: 1fr; }
         }
+
     </style>
 </head>
 <body>
@@ -419,7 +433,7 @@
                 <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.96-7-8.93h-2c0 6.08 4.93 11 11 11V19.93zm9-8.93H12V4.07c3.95.49 7 3.96 7 8.93zM12 6v6h6c0-3.95-3.05-7.18-7-7.93V6z"/>
                 </svg>
-                Culinary Compass
+                Margin Mind
             </a>
             <nav class="nav">
                 <a href="#about">About</a>
@@ -433,9 +447,10 @@
     <main>
         <section class="hero">
             <div class="container hero-content">
-                <h1>Unlock Your <span class="highlight">Data-Driven</span> Profitability.</h1>
-                <p>Stop guessing, start growing. We turn your data into a clear roadmap to predict demand, optimize staff, and uncover hidden revenue.</p>
-                <a href="#contact" class="btn">Get Your Free Restaurant Health Check</a>
+                <h1>Intelligent Solutions. Transparent Technology.</h1>
+                <!-- <h1>Unlock Your <span class="highlight">Data-Driven</span> Profitability.</h1> -->
+                <p>As data scientists, we know that for technology to be trusted, it must be understood. Our solutions are not a 'black box'—they are built to give you and your team the insights you need to make confident, data-driven decisions.</p>
+                <a href="#contact" class="btn">Get Your Free Restaurant Profitiability Aessment</a>
             </div>
         </section>
 
@@ -447,31 +462,19 @@
                 </div>
                 <div class="problem-points">
                     <div class="problem-point">
-                        <!-- <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                        </div> -->
-                        <h3>Labor Costs Spiraling Out of Control?</h3>
-                        <p>Our predictive models optimize staffing to meet real demand, saving you thousands annually on unnecessary payroll.</p>
+                        <span class="card-category">Labor Coprofitssts</span>
+                        <h3>Too many applicants, not enough money to hire?</h3>
+                        <p> We'll show you how to maximize the productivity of your existing team and reduce overtime, so you can run a lean, stable workforce without compromising on service.</p>
                     </div>
                     <div class="problem-point">
-                        <!-- <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z"/>
-                            </svg>
-                        </div> -->
-                        <h3>Menu Items That Aren't Pulling Their Weight?</h3>
-                        <p>We'll show you which dishes are draining your margins and which ones are your hidden cash cows.</p>
+                        <span class="card-category">Menu Profitability</span>
+                        <h3>Are hidden profit drains on your menu costing you?</h3>
+                        <p>Stop guessing your profitability. We'll track your plate costs in real-time to help you identify which dishes are your silent profit killers and which are your hidden cash cows.</p>
                     </div>
                     <div class="problem-point">
-                        <!-- <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-                            </svg>
-                        </div> -->
+                        <span class="card-category">Data & Insights</span>
                         <h3>Drowning in Data but Starving for Answers?</h3>
-                        <p>We turn your disparate data sources into a single, cohesive dashboard that gives you control, not confusion.</p>
+                        <p>Tired of "rear view mirror" P&L statements? We turn your raw data into a single, cohesive dashboard that gives you proactive, real-time control, not confusion.</p>
                     </div>
                 </div>
             </div>
@@ -484,7 +487,7 @@
                     <div class="solution-card">
                         <h3>Discover Your Profit Leaks</h3>
                         <p>Get a free, comprehensive, AI-driven audit of your operational data, review scores, and competitive landscape. We deliver a personalized report that pinpoints your most significant profit leaks.</p>
-                        <a href="#contact" class="btn">Get My Free Report</a>
+                        <a href="#contact" class="btn">Get My Free Restaurant Profitability Assessment</a>
                     </div>
                     <div class="solution-card">
                         <h3>Your Path to Continuous Growth</h3>
@@ -497,18 +500,14 @@
 
         <section class="section section-dark innovation-section">
             <div class="container">
-                <h2>The Frontier of Restaurant Profitability: Innovation at Our Core</h2>
-                <p class="leading">In the dynamic Toronto culinary scene, staying ahead requires more than just best practices. At Culinary Compass, we are constantly researching and developing cutting-edge solutions to give your restaurant a competitive edge.</p>
+                <h2>Smart Technology that Works With Your Team, Not Against It.</h2>
+                <p class="leading">In the dynamic Toronto culinary scene, staying ahead requires more than just best practices. At Margin Mind, we use smart technology to give your restaurant a competitive edge without compromising on the human touch.</p>
         
                 <div class="innovation-grid">
                     <div class="innovation-card">
-                        <!-- <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z"/>
-                            </svg>
-                        </div> -->
-                        <h3>AI-Powered Upsell Recommendation Engine</h3>
-                        <p>Boost your average ticket value with our proprietary AI. It intelligently suggests high-margin appetizers, premium drinks, and complementary desserts to your staff in real-time, based on customer order history and current trends.</p>
+                        <span class="card-category">Boost Sales with Smart Recommendations</span>
+                        <h3>AI-Powered Upsell Engine: Clear Recommendations, Proven Results.</h3>
+                        <p>Our intelligent system works alongside your staff, not as a replacement. It provides real-time upsell suggestions, and more importantly, it explains the data-backed logic behind each recommendation. This empowers your team to increase the average check size with confidence, knowing they have a proven strategy behind them.</p>
                     </div>
                     <div class="innovation-card">
                         <!-- <div class="icon-wrapper">
@@ -516,8 +515,9 @@
                                 <path d="M12 2L2 22h20L12 2zm-1 17h2v-2h-2v2zm0-4h2V9h-2v6z"/>
                             </svg>
                         </div> -->
-                        <h3>Predictive Inventory Optimization</h3>
-                        <p>Cut food waste and boost margins. Our advanced forecasting algorithms go beyond simple sales data, factoring in local events and weather patterns to predict your exact inventory needs. Say goodbye to over-ordering and running out of popular items.</p>
+                        <span class="card-category">Predictive Inventory Optimization</span>
+                        <h3>Reduce Waste with Scientific, Understandable Demand Forecasting.</h3>
+                        <p>Our system uses a scientific forecasting model that is designed for clarity. We don't just tell you what to order; we show you the data points and trends (like weather patterns and local events) that influenced the prediction. This gives you full control and a transparent view of your inventory needs, drastically reducing food waste.</p>
                     </div>
                     <div class="innovation-card">
                         <!-- <div class="icon-wrapper">
@@ -525,12 +525,13 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                         </div> -->
-                        <h3>Dynamic Menu Pricing</h3>
-                        <p>Maximize revenue during peak hours and incentivize sales during slower periods. Our system analyzes demand fluctuations in real-time, allowing you to subtly adjust menu prices and capture the optimal value for every dish.</p>
+                        <span class="card-category">Dynamic Menu Pricing</span>
+                        <h3> Dynamic Pricing: A Transparent Approach to Peak Profitability.</h3>
+                        <p>Our machine learning algorithm continuously analyzes demand fluctuations, allowing you to intelligently adjust menu prices. Instead of a mystery, you'll see a clear dashboard that shows you the real-time data and market forces that inform each price change. This level of insight ensures you are always operating at peak profitability with full transparency.</p>
                     </div>
                 </div>
         
-                <p class="cta-text">Ready to leverage these cutting-edge technologies to transform your Toronto restaurant's profitability? <a href="#contact" class="accent-link">Request a Free Health Check to learn more.</a></p>
+                <p class="cta-text">Ready to leverage these cutting-edge technologies to transform your Toronto restaurant's profitability? <a href="#contact" class="accent-link">Request a Free Profitiability Assessment to learn more.</a></p>
             </div>
         </section>
 
@@ -541,7 +542,7 @@
                     <div class="challenge-solution">
                         <h3>Case Study: A Toronto Casual Dining Spot</h3>
                         <p><strong>The Challenge:</strong> A popular Toronto restaurant was seeing labor costs consistently hover above the industry average of 30%, costing them an estimated $2,000 per month. The owner was spending over 10 hours a month on manual scheduling.</p>
-                        <p><strong>The Culinary Compass Solution:</strong> We analyzed their historical sales and staffing data, integrating it with local event calendars and weather forecasts. Our predictive model optimized their schedules to match real-time demand.</p>
+                        <p><strong>The Margin Mind Solution:</strong> We analyzed their historical sales and staffing data, integrating it with local event calendars and weather forecasts. Our predictive model optimized their schedules to match real-time demand.</p>
                     </div>
                     <div class="result">
                         <h3>The Result</h3>
@@ -550,7 +551,7 @@
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <blockquote>"It's an absolute no-brainer. The value from the data and the insights we receive from Culinary Compass are priceless. We get a massive return on our investment every single month."</blockquote>
+                        <blockquote>"It's an absolute no-brainer. The value from the data and the insights we receive from Margin Mind are priceless. We get a massive return on our investment every single month."</blockquote>
                         <p>— Jane D., Owner, The Corner Bistro</p>
                     </div>
                     <div class="testimonial-card">
@@ -584,7 +585,7 @@
                             <textarea id="message" name="message" required></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn form-btn">Get My Free Health Check</button>
+                            <button type="submit" class="btn form-btn">Get My Free Assessment</button>
                         </div>
                     </form>
                 </div>
