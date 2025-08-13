@@ -3,413 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Culinary Compass - Data-Driven Restaurant Profitability</title>
-    <meta name="description" content="Culinary Compass provides data-driven solutions for Toronto restaurants. We help you optimize labor costs, reduce food waste, and increase profitability with predictive insights.">
+    <meta name="description" content="Margin Mind provides data-driven solutions for Toronto restaurants. We help you optimize labor costs, reduce waste, and increase profitability with predictive AI insights.">
+    <title>Margin Mind - Data-Driven Restaurant Profitability</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Note: Aeonik is a premium font. You will need to purchase the font files and host them on your server. */
-        /* To use it, place your font files (e.g., .woff2) in a 'fonts' folder in your project directory. */
-        @font-face {
-            font-family: 'Aeonik';
-            src: url('fonts/Aeonik-Regular.woff2') format('woff2'),
-                 url('fonts/Aeonik-Regular.woff') format('woff');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Aeonik';
-            src: url('fonts/Aeonik-Bold.woff2') format('woff2'),
-                 url('fonts/Aeonik-Bold.woff') format('woff');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        :root {
-            --primary-color: #0D47A1;
-            --secondary-color: #121212;
-            --accent-color: #00E5FF;
-            --background-light: #F0F2F5;
-            --text-color-dark: #212121;
-            --text-color-light: #F0F2F5;
-            --text-color-light-secondary: #ddd;
-            --text-color-dark-secondary: #555;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            line-height: 1.6;
-            color: var(--text-color-dark);
-            background-color: var(--background-light);
-            overflow-x: hidden;
-        }
-        h1, h2, h3 {
-            font-family: 'Aeonik', sans-serif;
-            color: var(--secondary-color);
-            line-height: 1.2;
-            font-weight: 700;
-        }
-        h1 { font-size: 3.5em; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
-        h2 { font-size: 2.5em; }
-        p { font-family: 'Inter', sans-serif; }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-        .header {
-            background-color: var(--secondary-color);
-            color: var(--text-color-light);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            font-family: 'Aeonik', sans-serif;
-            font-size: 1.8em;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-        .logo-icon {
-            width: 35px;
-            height: 35px;
-            fill: var(--accent-color);
-            margin-right: 10px;
-        }
-        .nav a {
-            color: var(--text-color-light);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .nav a:hover {
-            color: var(--accent-color);
-        }
-        .hero {
-            background-color: var(--secondary-color);
-            color: var(--text-color-light);
-            text-align: center;
-            padding: 10rem 2rem;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .hero h1 {
-            color: var(--text-color-light);
-            text-transform: uppercase;
-        }
-        .hero .highlight {
-            color: var(--accent-color);
-        }
-        .hero p {
-            font-size: 1.5em;
-            max-width: 800px;
-            margin: 1.5rem auto 2.5rem;
-            font-weight: 500;
-            font-family: 'Inter', sans-serif;
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--secondary-color);
-            padding: 1rem 3rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #00BFFF;
-            transform: translateY(-3px);
-        }
-        .section {
-            padding: 5rem 0;
-            text-align: center;
-            position: relative;
-        }
-        .section-light { background-color: var(--background-light); }
-        .section-dark { background-color: var(--secondary-color); color: var(--text-color-light); }
-        .section-dark h2, .section-dark h3 { color: var(--background-light); }
-        .grid-section {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-            align-items: start;
-        }
-        .grid-section h2 { text-align: left; margin-bottom: 0; }
-        .grid-section p { text-align: left; margin-top: 0; }
-        .problem-section {
-            grid-template-columns: 1fr 2fr;
-            align-items: center;
-        }
-        .problem-points {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .problem-point {
-            background-color: #fff;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            text-align: left;
-            border-left: 3px solid var(--primary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .problem-point:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        .problem-point .icon-wrapper {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 1rem;
-        }
-        .problem-point .icon-wrapper svg {
-            width: 100%;
-            height: 100%;
-            fill: var(--primary-color);
-        }
-        .problem-point h3 {
-            font-size: 1.4em;
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
-        .solution-card {
-            background-color: #fff;
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            text-align: left;
-            border-top: 5px solid var(--primary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .solution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        .solution-card h3 {
-            font-size: 1.8em;
-            color: var(--primary-color);
-        }
-        .solution-card p {
-            min-height: 100px;
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color-dark-secondary);
-        }
-        .solution-card .btn {
-            background-color: var(--secondary-color);
-            color: var(--text-color-light);
-        }
-        .solution-card .btn:hover {
-            background-color: var(--text-color-dark);
-        }
-        .innovation-section {
-            padding: 6rem 0;
-        }
-        .innovation-section .leading {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-            color: var(--text-color-light-secondary);
-        }
-        .innovation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        .innovation-card {
-            background-color: var(--background-light);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .innovation-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .innovation-card .icon-wrapper {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 1rem;
-        }
-        .innovation-card .icon-wrapper svg {
-            width: 100%;
-            height: 100%;
-            fill: var(--primary-color);
-        }
-        .innovation-card h3 {
-            font-size: 1.6em;
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-        .innovation-card p {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--text-color-dark-secondary);
-        }
-        .innovation-section .cta-text {
-            font-size: 1.1em;
-            text-align: center;
-        }
-        .innovation-section .accent-link {
-            color: var(--accent-color);
-            font-weight: bold;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .innovation-section .accent-link:hover {
-            color: #00BFFF;
-        }
-        .case-study-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            text-align: left;
-            align-items: center;
-            background-color: #fff;
-            padding: 4rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            margin: 0 auto 3rem;
-        }
-        .case-study .challenge-solution {
-            border-left: 4px solid var(--primary-color);
-            padding-left: 1.5rem;
-        }
-        .case-study .result {
-            background-color: var(--primary-color);
-            color: var(--text-color-light);
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .result h3 { color: var(--text-color-light); }
-        .result p { font-size: 1.1em; }
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-        .testimonial-card {
-            background-color: var(--secondary-color);
-            color: var(--background-light);
-            padding: 2.5rem;
-            border-radius: 8px;
-            text-align: left;
-            position: relative;
-        }
-        .testimonial-card blockquote {
-            margin: 0;
-            font-style: italic;
-            font-size: 1.1em;
-        }
-        .testimonial-card p {
-            margin-top: 1.5rem;
-            font-weight: 500;
-            color: var(--accent-color);
-        }
-        .footer {
-            background-color: var(--secondary-color);
-            color: var(--background-light);
-            text-align: center;
-            padding: 3rem 0;
-        }
-        .contact-form-section {
-            background-color: var(--secondary-color);
-            color: var(--text-color-light);
-            padding: 5rem 0;
-        }
-        .contact-form-section h2, .contact-form-section p {
-            text-align: center;
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            text-align: left;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-color-light);
-            font-weight: 500;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            color: var(--text-color-dark);
-            font-family: 'Inter', sans-serif;
-        }
-        .form-group textarea {
-            min-height: 150px;
-        }
-        .form-btn {
-            display: block;
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-            font-family: 'Aeonik', sans-serif;
-            text-transform: uppercase;
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2em; }
-            .container { padding: 1rem; }
-            .hero { padding: 6rem 1rem; }
-            .header .container { flex-direction: column; }
-            .nav { margin-top: 1rem; }
-            .nav a { margin: 0 0.5rem; }
-            .grid-section { grid-template-columns: 1fr; }
-            .problem-section { grid-template-columns: 1fr; }
-            .problem-points { grid-template-columns: 1fr; }
-            .solutions-grid { grid-template-columns: 1fr; }
-            .case-study-grid { grid-template-columns: 1fr; }
-            .testimonials-grid { grid-template-columns: 1fr; }
-        }
-    </style>
 </head>
 <body>
 
@@ -419,13 +19,21 @@
                 <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.96-7-8.93h-2c0 6.08 4.93 11 11 11V19.93zm9-8.93H12V4.07c3.95.49 7 3.96 7 8.93zM12 6v6h6c0-3.95-3.05-7.18-7-7.93V6z"/>
                 </svg>
-                Culinary Compass
+                Margin Mind
             </a>
+            
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <nav class="nav">
                 <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#case-studies">Results</a>
+                <a href="#how-it-works">How It Works</a>
+                <!-- <a href="#case-studies">Results</a> -->
                 <a href="#contact">Contact</a>
+                <a href="https://calendly.com/your-calendly-link" class="nav-button">Book a Strategy Session</a>
             </nav>
         </div>
     </header>
@@ -434,8 +42,8 @@
         <section class="hero">
             <div class="container hero-content">
                 <h1>Take Back Control of Your Restaurant's Profitability.</h1>
-                <p>In today's economy, every dollar counts. We give you the data-driven insights you need to stabilize your cash flow, optimize your operations, and reduce financial stress.</p>
-                <a href="#contact" class="btn">Get My Free Profitability Assessment</a>
+                <p>In today’s economy, every dollar counts. We give you the data-driven insights you need to stabilize your cash flow, optimize your operations, and reduce financial stress.</p>
+                <a href="#contact" class="btn">Start Your Free Audit</a>
             </div>
         </section>
 
@@ -449,7 +57,7 @@
                     <div class="problem-point">
                         <div class="icon-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                         </div>
                         <h3>Too many applicants, not enough money to hire?</h3>
@@ -477,60 +85,31 @@
             </div>
         </section>
 
-        <section id="services" class="section section-dark">
+        <section id="how-it-works" class="section section-dark">
             <div class="container">
-                <h2>Your Plan for a More Profitable Future.</h2>
-                <div class="solutions-grid">
-                    <div class="solution-card">
-                        <h3>Discover Your Profit Leaks</h3>
-                        <p>Get a free, comprehensive, AI-driven audit of your operational data, review scores, and competitive landscape. We deliver a personalized report that pinpoints your most significant profit leaks.</p>
-                        <a href="#contact" class="btn">Get My Free Profitability Assessment</a>
+                <h2>A Simple Path to Profitability</h2>
+                <div class="how-it-works-grid">
+                    <div class="how-it-works-card">
+                        <h3>1. The Reputation Audit</h3>
+                        <p>We start with a free, no-obligation deep dive into your online reputation and operational data to pinpoint your biggest profit leaks and growth opportunities. We’ll show you exactly where the money is hiding.</p>
                     </div>
-                    <div class="solution-card">
-                        <h3>Your Path to Continuous Growth</h3>
-                        <p>Join a strategic partnership with continuous AI-powered insights. You'll receive weekly demand forecasts, performance dashboards, and proactive alerts to keep your business on track.</p>
-                        <a href="#contact" class="btn">Learn More About the Pro Plan</a>
+                    <div class="how-it-works-card">
+                        <h3>2. Connect Your Systems</h3>
+                        <p>We securely connect to your existing POS (TouchBistro, Square, Lightspeed, etc.) and other software to gather the raw data we need. No new hardware, no complicated setup, just seamless integration.</p>
+                    </div>
+                    <div class="how-it-works-card">
+                        <h3>3. Your Custom Dashboard</h3>
+                        <p>We turn all that raw data into a single, intuitive dashboard that gives you real-time, actionable insights. Get clear answers on demand forecasting, menu profitability, and labor optimization.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-dark innovation-section">
+        <section id="risk-reversal" class="risk-reversal">
             <div class="container">
-                <h2>Smart Technology that Works With Your Team, Not Against It.</h2>
-                <p class="leading">In the dynamic Toronto culinary scene, staying ahead requires more than just best practices. At Culinary Compass, we use smart technology to give your restaurant a competitive edge without compromising on the human touch.</p>
-        
-                <div class="innovation-grid">
-                    <div class="innovation-card">
-                        <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z"/>
-                            </svg>
-                        </div>
-                        <h3>Boost Sales with Smart Recommendations</h3>
-                        <p>Our intelligent system works alongside your staff, not as a replacement. It provides real-time upsell suggestions that help your team increase the average check size, so they can focus on delivering great service.</p>
-                    </div>
-                    <div class="innovation-card">
-                        <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 2L2 22h20L12 2zm-1 17h2v-2h-2v2zm0-4h2V9h-2v6z"/>
-                            </svg>
-                        </div>
-                        <h3>Predictive Inventory Optimization</h3>
-                        <p>Cut food waste and boost margins. Our advanced forecasting algorithms go beyond simple sales data, factoring in local events and weather patterns to predict your exact inventory needs. Say goodbye to over-ordering and running out of popular items.</p>
-                    </div>
-                    <div class="innovation-card">
-                        <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                        </div>
-                        <h3>Dynamic Menu Pricing</h3>
-                        <p>Maximize revenue during peak hours and incentivize sales during slower periods. Our system analyzes demand fluctuations in real-time, allowing you to subtly adjust menu prices and capture the optimal value for every dish.</p>
-                    </div>
-                </div>
-        
-                <p class="cta-text">Ready to leverage these cutting-edge technologies to transform your Toronto restaurant's profitability? <a href="#contact" class="accent-link">Request a Free Health Check to learn more.</a></p>
+                <h2>What if we're wrong?</h2>
+                <p>If we don't find at least **7% cost savings** in your first 60 days, we'll work free until we do. No contracts. No jargon. No risk.</p>
+                <a href="#contact" class="btn">Start Your Free Audit</a>
             </div>
         </section>
 
@@ -541,7 +120,7 @@
                     <div class="challenge-solution">
                         <h3>Case Study: A Toronto Casual Dining Spot</h3>
                         <p><strong>The Challenge:</strong> A popular Toronto restaurant was seeing labor costs consistently hover above the industry average of 30%, costing them an estimated $2,000 per month. The owner was spending over 10 hours a month on manual scheduling.</p>
-                        <p><strong>The Culinary Compass Solution:</strong> We analyzed their historical sales and staffing data, integrating it with local event calendars and weather forecasts. Our predictive model optimized their schedules to match real-time demand.</p>
+                        <p><strong>The Margin Mind Solution:</strong> We analyzed their historical sales and staffing data, integrating it with local event calendars and weather forecasts. Our predictive model optimized their schedules to match real-time demand.</p>
                     </div>
                     <div class="result">
                         <h3>The Result</h3>
@@ -550,7 +129,7 @@
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <blockquote>"It's an absolute no-brainer. The value from the data and the insights we receive from Culinary Compass are priceless. We get a massive return on our investment every single month."</blockquote>
+                        <blockquote>"It's an absolute no-brainer. The value from the data and the insights we receive from Margin Mind are priceless. We get a massive return on our investment every single month."</blockquote>
                         <p>— Jane D., Owner, The Corner Bistro</p>
                     </div>
                     <div class="testimonial-card">
@@ -584,7 +163,7 @@
                             <textarea id="message" name="message" required></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn form-btn">Get My Free Profitability Assessment</button>
+                            <button type="submit" class="btn form-btn">Get My Free Audit</button>
                         </div>
                     </form>
                 </div>
@@ -594,46 +173,12 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Culinary Compass. All rights reserved.</p>
+            <p>&copy; 2025 Margin Mind. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
+    <script src="script.js"></script>
 
-            const sections = document.querySelectorAll('.section, .contact-form-section');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.2
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(50px)';
-                section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-                observer.observe(section);
-            });
-        });
-    </script>
 
 </body>
 </html>
