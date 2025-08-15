@@ -101,11 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.ok) {
-                // Since you're not redirecting, this logic is correct
-                // to call gtag and then show the success message.
-                gtag_report_conversion();
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
+                window.location.href = 'thank-you.html';
 
             } else {
                 alert('Something went wrong. Please try again.');
@@ -116,18 +112,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-function gtag_report_conversion(url) {
-    var callback = function () {
-        if (typeof(url) != 'undefined') {
-            window.location = url;
-        }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17469046361/yglfCIHimocbENn88YlB',
-        'value': 1.0,
-        'currency': 'CAD',
-        'event_callback': callback
-    });
-    return false;
-}
