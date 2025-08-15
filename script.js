@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('open');
         hamburger.classList.toggle('is-active');
     });
-    
+
     // Close the menu when a link is clicked
     document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', () => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-        const accordionItems = document.querySelectorAll('.accordion-item');
+    const accordionItems = document.querySelectorAll('.accordion-item');
 
     accordionItems.forEach(item => {
         const header = item.querySelector('.accordion-header');
@@ -78,39 +78,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-const form = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
+    const form = document.querySelector('form');
+    const successMessage = document.getElementById('form-success-message');
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    formStatus.textContent = 'Sending...';
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    const formData = new FormData(form);
-    const formObject = {};
-    formData.forEach((value, key) => {
-        formObject[key] = value;
-    });
-
-    try {
-        const response = await fetch('https://culinarycompass.app/.netlify/functions/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formObject)
+        const formData = new FormData(form);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
         });
 
-        if (response.ok) {
-            // Redirect to the new thank you page after successful submission
-            window.location.href = 'thank-you.html';
-        } else {
-            const errorText = await response.text();
-            formStatus.textContent = `Error: ${errorText}`;
-            formStatus.style.color = 'red';
-        }
+        try {
+            // Correct URL for your Netlify serverless function
+            const response = await fetch('https://culinarycompass.app/.netlify/functions/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formObject)
+            });
+
+            if (response.ok) {
+                // Since you're not redirecting, this logic is correct
+                // to call gtag and then show the success message.
+                gtag_report_conversion();
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
         } catch (error) {
-            formStatus.textContent = `Error: ${error.message}`;
-            formStatus.style.color = 'red';
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
         }
     });
 });
+
+function gtag_report_conversion(url) {
+    var callback = function () {
+        if (typeof(url) != 'undefined') {
+            window.location = url;
+        }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17469046361/yglfCIHimocbENn88YlB',
+        'value': 1.0,
+        'currency': 'CAD',
+        'event_callback': callback
+    });
+    return false;
+}
