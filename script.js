@@ -93,13 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.ok) {
-                // SUCCESSFUL SUBMISSION - This is where we call your conversion function.
-
-                // We fire your gtag_report_conversion function, but with a slight modification.
-                // We pass null for the URL because we are not redirecting to a new page.
                 gtag_report_conversion(null);
-
-                // Hide the form and show a success message to the user
                 form.style.display = 'none';
                 successMessage.style.display = 'block';
 
