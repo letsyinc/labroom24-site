@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // const form = document.querySelector('form');
+    const form = document.querySelector('form');
     // const successMessage = document.getElementById('form-success-message');
 
     form.addEventListener('submit', async (e) => {
