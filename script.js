@@ -78,28 +78,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const form = document.querySelector('form');
-    const successMessage = document.getElementById('form-success-message');
+    // const form = document.querySelector('form');
+    // const successMessage = document.getElementById('form-success-message');
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const formData = new FormData(form);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
+        // const formData = new FormData(form);
+        // const formObject = {};
+        // formData.forEach((value, key) => {
+        //     formObject[key] = value;
+        // });
 
         try {
             // Correct URL for your Netlify serverless function
-            const response = await fetch('https://culinarycompass.app/.netlify/functions/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formObject)
-            });
-
             if (response.ok) {
                 window.location.href = 'thank-you.html';
 
