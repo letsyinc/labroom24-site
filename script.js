@@ -78,29 +78,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const form = document.querySelector('form');
-    // const successMessage = document.getElementById('form-success-message');
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // const formData = new FormData(form);
-        // const formObject = {};
-        // formData.forEach((value, key) => {
-        //     formObject[key] = value;
-        // });
-
-        try {
-            // Correct URL for your Netlify serverless function
-            if (response.ok) {
-                window.location.href = 'thank-you.html';
-
-            } else {
-                alert('Something went wrong. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again later.');
-        }
-    });
 });
