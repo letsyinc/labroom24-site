@@ -77,4 +77,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const form = document.querySelector('form');
+    const successMessage = document.getElementById('form-success-message');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                // SUCCESSFUL SUBMISSION - This is where we call your conversion function.
+
+                // We fire your gtag_report_conversion function, but with a slight modification.
+                // We pass null for the URL because we are not redirecting to a new page.
+                gtag_report_conversion(null);
+
+                // Hide the form and show a success message to the user
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        }
+    });
 });
