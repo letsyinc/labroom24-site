@@ -78,31 +78,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const form = document.querySelector('form');
-    const successMessage = document.getElementById('form-success-message');
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Prevent default form submission
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formStatus.textContent = 'Sending...';
 
-        const formData = new FormData(form);
+    const formData = new FormData(form);
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
 
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-            });
+    try {
+        const response = await fetch('https://culinarycompass.app/.netlify/functions/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formObject)
+        });
 
-            if (response.ok) {
-                gtag_report_conversion('https://www.culinarycompass.app/');
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
-
-            } else {
-                alert('Something went wrong. Please try again.');
-            }
+        if (response.ok) {
+            // Redirect to the new thank you page after successful submission
+            window.location.href = 'thank-you.html';
+        } else {
+            const errorText = await response.text();
+            formStatus.textContent = `Error: ${errorText}`;
+            formStatus.style.color = 'red';
+        }
         } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again later.');
+            formStatus.textContent = `Error: ${error.message}`;
+            formStatus.style.color = 'red';
         }
     });
 });
