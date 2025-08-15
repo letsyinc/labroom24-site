@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.ok) {
-                gtag_report_conversion(null);
+                gtag_report_conversion('https://www.culinarycompass.app/');
                 form.style.display = 'none';
                 successMessage.style.display = 'block';
 
