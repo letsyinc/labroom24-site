@@ -87,12 +87,9 @@ p { font-family: 'Inter', sans-serif; }
 .logo-container img {
     height: 70px; /* Adjust size as needed */
     width: auto;
-    /* For black background, the provided logo already works well */
-    /* If you had a light logo that needed to invert, you'd use:
-    filter: brightness(0) invert(1); */
+    /* The provided image_cc4b87.png works well on dark backgrounds without filter */
 }
-/* If you want text next to logo, ensure its color is light on dark header */
-.logo-container .logo-text {
+.logo-container .logo-text { /* If you add text next to the logo */
     font-family: 'Aeonik', sans-serif;
     font-size: 2.2em; /* Slightly larger for presence */
     font-weight: 800;
@@ -157,19 +154,30 @@ p { font-family: 'Inter', sans-serif; }
     position: relative;
     z-index: 2;
 }
+.hero .tagline {
+    font-family: 'Aeonik', sans-serif;
+    font-size: 1.5em;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
 .hero h1 {
     color: var(--text-color-light);
     text-transform: uppercase;
     max-width: 900px; /* Constrain width for better readability */
     margin-left: auto;
     margin-right: auto;
+    font-size: 4.2em; /* Larger headline for impact */
 }
-.hero p {
-    font-size: 1.5em;
-    max-width: 800px;
+.hero-subtext {
+    font-size: 1.6em; /* Larger subtext */
+    max-width: 850px;
     margin: 1.5rem auto 3rem; /* More space below paragraph */
     font-weight: 500;
     color: var(--text-color-light-secondary); /* Subtly lighter text */
+    line-height: 1.5;
 }
 .btn {
     display: inline-block;
@@ -235,34 +243,34 @@ p { font-family: 'Inter', sans-serif; }
     color: var(--accent-color); /* Stands out on dark background */
 }
 
-/* Problem Statement Section (new content) */
+/* Problem Statement Section */
 .problem-statement-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem; /* More space between problem items */
+    gap: 2.5rem;
     margin-top: 4rem;
     text-align: left;
 }
 .problem-item {
     background-color: #fff;
     padding: 2.5rem;
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* Deeper shadow */
-    border-top: 5px solid var(--primary-color); /* Stronger top border */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border-top: 5px solid var(--primary-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align icon and text to left */
+    align-items: flex-start;
 }
 .problem-item:hover {
-    transform: translateY(-12px); /* Lift more on hover */
+    transform: translateY(-12px);
     box-shadow: 0 20px 45px rgba(0,0,0,0.2);
 }
 .problem-icon {
-    width: 60px; /* Larger icons */
+    width: 60px;
     height: 60px;
     margin-bottom: 1.5rem;
-    border-radius: 50%; /* Make icon background circular */
+    border-radius: 50%;
     padding: 10px;
     background-color: var(--primary-color);
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
@@ -277,20 +285,20 @@ p { font-family: 'Inter', sans-serif; }
     color: var(--text-color-dark-secondary);
 }
 
-/* Solution Grid (old .problem-section / .problem-points but refactored) */
+/* Solution Grid */
 .solution-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem; /* More spacing */
+    gap: 3rem;
     margin-top: 4rem;
     text-align: left;
 }
 .solution-card {
-    background-color: var(--background-light); /* Light cards on dark section */
+    background-color: var(--background-light);
     padding: 3rem;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Stronger shadow */
-    border-left: 5px solid var(--accent-color); /* Accent border */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-left: 5px solid var(--accent-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -331,8 +339,8 @@ p { font-family: 'Inter', sans-serif; }
     background-color: #fff;
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* Stronger shadow */
-    border-right: 5px solid var(--primary-color); /* Right border for variation */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border-right: 5px solid var(--primary-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -361,39 +369,114 @@ p { font-family: 'Inter', sans-serif; }
     color: var(--text-color-dark-secondary);
 }
 
-/* Testimonials Section (new structure) */
+/* Testimonials Section */
 .testimonials-grid-new {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Larger testimonial cards */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 2rem;
     margin-top: 4rem;
     text-align: left;
 }
 .testimonial-card-new {
-    background-color: var(--primary-color); /* Primary blue for testimonials */
+    background-color: var(--primary-color);
     color: var(--text-color-light);
-    padding: 3.5rem; /* Generous padding */
+    padding: 3.5rem;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     position: relative;
-    /* Add subtle background pattern or texture here if desired */
-    /* background-image: url('path/to/subtle-pattern.png'); */
 }
 .testimonial-card-new blockquote {
     margin: 0;
     font-style: italic;
-    font-size: 1.3em; /* Larger quote text */
+    font-size: 1.3em;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    color: var(--background-light); /* Lighter text for good contrast */
+    color: var(--background-light);
 }
 .testimonial-author {
     font-weight: 600;
     font-size: 1.1em;
-    color: var(--accent-color); /* Accent color for author name */
+    color: var(--accent-color);
 }
 
-/* Contact Form Section */
+/* Benefits Grid (Founders Program) */
+.benefits-grid, .requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+    text-align: left;
+}
+.benefit-card, .requirement-item {
+    background-color: var(--background-light); /* Light cards on dark section */
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-left: 5px solid var(--accent-color); /* Accent border for benefits */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.benefit-card:hover, .requirement-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+.benefit-icon, .requirement-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: var(--accent-color); /* Accent background for benefit icons */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.requirement-item {
+    border-left: 5px solid var(--primary-color); /* Primary border for requirements */
+    background-color: #fff; /* White cards on light section */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.requirement-icon {
+    background-color: var(--primary-color); /* Primary background for requirement icons */
+}
+.benefit-card h3, .requirement-item h3 {
+    font-size: 1.6em;
+    color: var(--primary-color); /* Consistent heading color */
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+.benefit-card p, .requirement-item p {
+    color: var(--text-color-dark-secondary);
+}
+
+
+/* CTA Section (for "The Choice") */
+.cta-section {
+    padding: 8rem 0; /* More vertical space to stand out */
+    background-color: var(--primary-color); /* Primary color background */
+    background-image: linear-gradient(135deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1) 100%);
+    background-size: 60px 60px;
+}
+.cta-section h2 {
+    font-size: 3em;
+    color: var(--text-color-light);
+    margin-bottom: 1.5rem;
+}
+.cta-section .leading-paragraph {
+    font-size: 1.4em;
+    color: var(--text-color-light-secondary);
+    margin-bottom: 3.5rem;
+}
+.cta-section .btn {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+.cta-section .btn:hover {
+    background-color: #00C6DD;
+    transform: translateY(-7px);
+}
+
+/* Contact Form Section (Apply Form) */
 .contact-form-section {
     background-color: var(--secondary-color); /* Dark background */
     color: var(--text-color-light);
@@ -404,25 +487,26 @@ p { font-family: 'Inter', sans-serif; }
     color: var(--text-color-light);
 }
 .contact-form {
-    max-width: 650px; /* Slightly wider form */
+    max-width: 700px; /* Slightly wider form */
     margin: 3rem auto 0;
     background-color: #fff; /* White form on dark background */
-    padding: 3rem;
+    padding: 3.5rem; /* More padding in the form itself */
     border-radius: 12px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.35); /* Stronger shadow for form */
+    box-shadow: 0 15px 45px rgba(0,0,0,0.4); /* Stronger shadow for form */
 }
 .form-group {
-    margin-bottom: 1.8rem; /* More space between form fields */
+    margin-bottom: 2rem; /* More space between form fields */
 }
 .form-group label {
     display: block;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
     color: var(--text-color-dark); /* Dark labels on white form */
     font-weight: 600;
     font-size: 1.1em;
 }
 .form-group input[type="text"],
 .form-group input[type="email"],
+.form-group input[type="tel"], /* Added phone type */
 .form-group textarea {
     width: 100%;
     padding: 1rem; /* Larger input fields */
@@ -434,19 +518,19 @@ p { font-family: 'Inter', sans-serif; }
     font-size: 1em;
 }
 .form-group textarea {
-    min-height: 180px; /* Taller textarea */
-    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px; /* Adjust textarea height */
+    resize: vertical;
 }
 .form-btn {
     display: block;
     width: 100%;
     border: none;
     cursor: pointer;
-    font-size: 1.1em; /* Larger text on button */
+    font-size: 1.1em;
     font-family: 'Aeonik', sans-serif;
     text-transform: uppercase;
-    background-color: var(--accent-color); /* Accent colored button */
-    color: var(--secondary-color); /* Dark text on accent button */
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
     padding: 1.2rem 2rem;
     border-radius: 50px;
     font-weight: 700;
@@ -466,11 +550,11 @@ p { font-family: 'Inter', sans-serif; }
     color: var(--background-light);
     text-align: center;
     padding: 3rem 0;
-    border-top: 1px solid rgba(255,255,255,0.1); /* Subtle top border */
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 .footer p {
     margin: 0.5rem 0;
-    color: var(--text-color-light-secondary); /* Subtler text */
+    color: var(--text-color-light-secondary);
 }
 .footer .text-sm {
     font-size: 0.9em;
@@ -488,10 +572,10 @@ p { font-family: 'Inter', sans-serif; }
 }
 .hamburger span {
     display: block;
-    width: 28px; /* Slightly larger lines */
+    width: 28px;
     height: 3px;
     background-color: var(--text-color-light);
-    margin: 6px 0; /* More space between lines */
+    margin: 6px 0;
     transition: all 0.3s ease;
 }
 .hamburger.is-active span:nth-child(1) {
@@ -505,26 +589,28 @@ p { font-family: 'Inter', sans-serif; }
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 992px) { /* Adjust breakpoint for larger tablets */
+@media (max-width: 992px) {
     h1 { font-size: 3em; }
     h2 { font-size: 2.2em; }
-    .hero p { font-size: 1.3em; }
+    .hero-subtext { font-size: 1.3em; }
     .btn { padding: 1rem 2.5rem; }
     .leading-paragraph { font-size: 1.1em; }
     .bottom-statement { font-size: 1.0em; }
-    .container { padding: 3rem 1.5rem; } /* Slightly less padding on smaller screens */
+    .container { padding: 3rem 1.5rem; }
     .section { padding: 4rem 0; }
 
-    /* Adjust grids for smaller screens */
-    .problem-statement-grid,
-    .solution-grid,
-    .different-grid,
-    .testimonials-grid-new {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    .benefits-grid, .requirements-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
-    .problem-item, .solution-card, .different-card, .testimonial-card-new {
-        padding: 2rem; /* Reduce padding slightly on cards */
+    .benefit-card, .requirement-item {
+        padding: 2rem;
+    }
+    .testimonials-grid-new {
+        grid-template-columns: 1fr;
+    }
+    .testimonial-card-new {
+        padding: 2.5rem;
     }
     .hero { min-height: 70vh; padding: 8rem 1.5rem; }
 }
@@ -532,7 +618,7 @@ p { font-family: 'Inter', sans-serif; }
 @media (max-width: 768px) {
     h1 { font-size: 2.5em; letter-spacing: 1px; }
     h2 { font-size: 1.8em; }
-    .hero p { font-size: 1.1em; }
+    .hero-subtext { font-size: 1.1em; }
     .leading-paragraph { font-size: 1em; }
     .bottom-statement { font-size: 0.9em; }
     .btn { padding: 0.8rem 2rem; font-size: 0.9em; }
@@ -544,48 +630,47 @@ p { font-family: 'Inter', sans-serif; }
         padding: 0 1.5rem;
     }
     .logo-container {
-        flex-grow: 1; /* Allow logo to take more space */
+        flex-grow: 1;
         justify-content: flex-start;
     }
     .logo-container img {
-        height: 60px; /* Smaller logo on mobile */
+        height: 60px;
     }
     .logo-container .logo-text {
-        font-size: 1.8em; /* Smaller text for mobile */
+        font-size: 1.8em;
     }
     
     .hamburger {
-        display: block; /* Show hamburger */
+        display: block;
     }
-
     .nav {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center menu items */
+        align-items: center;
         width: 100%;
         position: absolute;
         top: 100%;
         left: 0;
         background-color: var(--secondary-color);
         padding: 1.5rem 0;
-        transform: translateY(-120%); /* Hide off-screen */
+        transform: translateY(-120%);
         transition: transform 0.5s ease-in-out;
-        z-index: 999; /* Below hamburger */
+        z-index: 999;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
     .nav.open {
-        transform: translateY(0); /* Slide in */
+        transform: translateY(0);
     }
     .nav a {
         margin: 0.75rem 0;
         font-size: 1.1em;
         padding: 0.5rem 0;
-        width: 80%; /* Give links width for easier tapping */
+        width: 80%;
         text-align: center;
     }
     .nav-button {
-        margin: 1rem auto; /* Center button in menu */
+        margin: 1rem auto;
         width: 80%;
         padding: 0.8rem 1.5rem;
     }
@@ -602,18 +687,18 @@ p { font-family: 'Inter', sans-serif; }
 @media (max-width: 480px) {
     h1 { font-size: 2em; }
     h2 { font-size: 1.6em; }
-    .hero p { font-size: 1em; margin: 1rem auto 2rem; }
+    .hero-subtext { font-size: 1em; margin: 1rem auto 2rem; }
     .btn { padding: 0.7rem 1.8rem; font-size: 0.85em; }
 
     .problem-item, .solution-card, .different-card, .testimonial-card-new {
-        padding: 1.5rem; /* Further reduce padding on smallest screens */
+        padding: 1.5rem;
     }
-    .problem-icon, .solution-icon, .different-icon {
+    .problem-icon, .solution-icon, .different-icon, .benefit-icon, .requirement-icon {
         width: 50px;
         height: 50px;
         margin-bottom: 1rem;
     }
-    .problem-item h3, .solution-card h3, .different-card h3 {
+    .problem-item h3, .solution-card h3, .different-card h3, .benefit-card h3, .requirement-item h3 {
         font-size: 1.3em;
     }
     .testimonial-card-new blockquote {
@@ -629,7 +714,7 @@ p { font-family: 'Inter', sans-serif; }
     .text-center-mobile {
         text-align: center;
     }
-    .problem-item, .solution-card, .different-card {
+    .problem-item, .solution-card, .different-card, .benefit-card, .requirement-item {
         align-items: center; /* Center content within cards on mobile */
         text-align: center;
     }
