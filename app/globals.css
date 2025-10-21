@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* A. Color Palette & Typography Setup */
+:root {
+    --navy-authority: #001F3F;
+    --teal-insight: #11C8A9;
+    --clarity-text: #FFFFFF;
+    --accent-red: #FF4136;
+}
+
+/* Base Body Styles */
+body {
+    background-color: var(--navy-authority);
+    color: var(--clarity-text);
+    /* Next.js loads Inter automatically, but setting a generic fallback is good practice */
+    font-family: 'Inter', sans-serif; 
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+/* C. Design Style: Subtle Technical Grid Background - CRITICAL for the aesthetic */
+.technical-bg {
+    background-color: #001F3F; /* Base fallback */
+    background-image: linear-gradient(0deg, var(--navy-authority) 0%, transparent 100%),
+                      linear-gradient(90deg, var(--navy-authority) 0%, transparent 100%),
+                      /* Grid Pattern */
+                      repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 50px);
+    background-size: 100% 100%;
+}
+
+/* 1. Hero Section: Logo Pulse Animation */
+@keyframes pulse-teal {
+    0%, 100% { filter: drop-shadow(0 0 5px var(--teal-insight)); }
+    50% { filter: drop-shadow(0 0 20px var(--teal-insight)); }
+}
+.logo-pulse {
+    animation: pulse-teal 3s infinite ease-in-out;
+}
+
+.logo-crisp {
+    filter: brightness(2) contrast(1.5);
+}
+
+/* 1. Hero Section: Score Glow Animation */
+@keyframes score-glow {
+    0% { box-shadow: 0 0 10px rgba(17, 200, 169, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(17, 200, 169, 0.8), 0 0 50px rgba(17, 200, 169, 0.4); }
+    100% { box-shadow: 0 0 10px rgba(17, 200, 169, 0.5); }
+}
+.score-shield {
+    animation: score-glow 5s infinite alternate ease-in-out;
+}
+
+/* Button & Card Styles */
+.card-shadow {
+    box-shadow: 0 0 20px rgba(17, 200, 169, 0.1);
+}
+
+.button-glow {
+    transition: all 0.3s ease;
+}
+.button-glow:hover {
+    box-shadow: 0 0 15px rgba(17, 200, 169, 0.7);
+    transform: translateY(-2px);
+}
