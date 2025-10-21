@@ -1,0 +1,8 @@
+[build]
+  command = "next build"
+  publish = ".next"
+  # Base directory should be empty if your project is in the repo root
+  # base = "/" 
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
