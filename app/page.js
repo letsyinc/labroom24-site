@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 // NOTE: Custom CSS (customStyles) has been moved to app/globals.css for Next.js best practices.
+import Image from 'next/image';
+import Link from 'next/link';
 
 const LoadingSpinner = () => (
     <svg className="animate-spin-slow h-8 w-8 text-white mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -58,15 +60,17 @@ const LandingPage = () => {
         <div className="flex flex-col min-h-screen">
             {/* Header / Navbar */}
             <header className="px-6 py-4 flex justify-between items-center border-b border-white/10 sticky top-0 bg-[#001F3F] z-10">
-                <a href="/" className="flex items-center space-x-2">
-                    <img src="/logo_cropped.png" alt="LABROOM24 Logo" className="h-8 logo-pulse" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x32/001F3F/11C8A9?text=LOGO"; }} />
-                    <img src="/text_logo_.png" alt="LABROOM24 Logo" className="h-5" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x32/001F3F/11C8A9?text=LOGO"; }} />
+                <Link href="/" className="flex items-center space-x-2">
+                    {/* <img src="/logo_cropped.png" alt="LABROOM24 Logo" className="h-8 logo-pulse" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x32/001F3F/11C8A9?text=LOGO"; }} /> */}
+                    <Image src="/logo_cropped.png" alt="LABROOM24 Logo" height={32} width={100} className="h-8 w-auto logo-pulse" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x32/001F3F/11C8A9?text=LOGO"; }} priority />
+                    {/* <img src="/text_logo_.png" alt="LABROOM24 Logo" className="h-5" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x32/001F3F/11C8A9?text=LOGO"; }} /> */}
+                    <Image src="/text_logo_.png" alt="LABROOM24 Logo" height={20} width={100} className="h-5 w-auto logo-pulse" onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x32/001F3F/11C8A9?text=LOGO"; }} priority />
 
                     {/* <span className="text-xl font-mono tracking-widest text-[#11C8A9] hidden sm:inline">LABROOM24</span> */}
-                </a>
-                <a href="#submit-form" className="text-sm font-semibold px-4 py-2 bg-[#11C8A9] text-white rounded-lg hover:bg-opacity-90 transition duration-300 button-glow">
+                </Link>
+                <Link href="#submit-form" className="text-sm font-semibold px-4 py-2 bg-[#11C8A9] text-white rounded-lg hover:bg-opacity-90 transition duration-300 button-glow">
                     Initiate Your Pilot
-                </a>
+                </Link>
             </header>
 
             <main className="flex-grow">
@@ -81,12 +85,21 @@ const LandingPage = () => {
 
                     {/* AI Accountability Score Visualization */}
                     <div className="relative inline-block mb-16">
-                        <img 
+                        {/* <img 
                             src="/section_3.png" 
                             alt="AI Accountability Score 98%" 
                             className="w-48 h-48 sm:w-64 sm:h-58 object-contain mx-auto score-shield"
                             onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/256x256/001F3F/11C8A9?text=Score"; }} 
-                        />
+                        /> */}
+                      <Image
+                          src="/section_3.png"
+                          alt="AI Accountability Score 98%"
+                          width={256}
+                          height={256}
+                          className="w-48 h-48 sm:w-64 sm:h-58 object-contain mx-auto score-shield"
+                          onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/256x256/001F3F/11C8A9?text=Score"; }}
+                          priority
+                      />
                     </div>
 
                     <a href="#submit-form" className="inline-block text-xl font-black px-8 py-4 bg-[#11C8A9] text-white rounded-xl hover:bg-opacity-90 transition duration-300 shadow-xl shadow-[#11C8A9]/50 button-glow">
@@ -112,12 +125,20 @@ const LandingPage = () => {
                             </ul>
                         </div>
                         <div className="relative">
-                            <img 
+                            {/* <img 
                                 src="/section_2.png" 
                                 alt="Chaos vs Control Split" 
                                 className="w-full h-auto rounded-xl shadow-2xl card-shadow"
                                 onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/001F3F/11C8A9?text=Risk+vs+Control"; }} 
-                            />
+                            /> */}
+                            <Image
+                              src="/section_2.png"
+                              alt="Chaos vs Control Split"
+                              width={600}
+                              height={400}
+                              className="w-full h-auto rounded-xl shadow-2xl card-shadow"
+                              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/001F3F/11C8A9?text=Risk+vs+Control"; }}
+                          />
                         </div>
                     </div>
                 </section>
@@ -159,12 +180,20 @@ const LandingPage = () => {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="relative">
-                            <img 
+                            {/* <img 
                                 src="/section_4.png" 
                                 alt="Founder Photo and Confusion Matrix Chart" 
                                 className="w-full h-auto rounded-xl shadow-2xl card-shadow"
                                 onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/001F3F/11C8A9?text=Founder+Data"; }} 
-                            />
+                            /> */}
+                            <Image
+                              src="/section_4.png"
+                              alt="Founder Photo and Confusion Matrix Chart"
+                              width={600}
+                              height={400}
+                              className="w-full h-auto rounded-xl shadow-2xl card-shadow"
+                              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/001F3F/11C8A9?text=Founder+Data"; }}
+                          />
                         </div>
                         <div className="space-y-6">
                             <div className="bg-[#001A33] p-6 rounded-xl border border-[#11C8A9]/50">
@@ -214,7 +243,7 @@ const LandingPage = () => {
 
                             {/* Project Description */}
                             <div>
-                                <label htmlFor="description" className="block text-sm font-medium text-gray-300 mb-2">Brief Project Description (e.g., "Outsourced Python APIs using GPT-4")</label>
+                                <label htmlFor="description" className="block text-sm font-medium text-gray-300 mb-2">Brief Project Description (e.g., Outsourced Python APIs using GPT-4)</label>
                                 <textarea name="description" id="description" rows="4" onChange={handleChange} required className="w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm p-3 text-white font-mono focus:ring-[#11C8A9] focus:border-[#11C8A9]"></textarea>
                                 <p className="mt-2 text-xs text-gray-500">
                                     All submissions are confidential and deleted after 48 hours.
