@@ -31,11 +31,9 @@ const LandingPage = () => {
 
         try {
             // Netlify requires POST to the current path ("/") for AJAX submissions
-            const response = await fetch("/", {
+            const response = await fetch("/__forms.html", { 
                 method: "POST",
-                // Crucial for Netlify to parse the data correctly in an AJAX request
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                // Convert FormData to URLSearchParams for the body
                 body: new URLSearchParams(data).toString(),
             });
 
@@ -226,8 +224,7 @@ const LandingPage = () => {
                             </p>
                         </div>
                     ) : (
-                        <form name="preliminary_score" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6 bg-[#001A33] p-8 rounded-xl shadow-2xl card-shadow">
-                            <input type="hidden" name="form-name" value="preliminary_score" />
+                        <form name="preliminary_score" onSubmit={handleSubmit} className="space-y-6 bg-[#001A33] p-8 rounded-xl shadow-2xl card-shadow">                            <input type="hidden" name="form-name" value="preliminary_score" />
 
                             {/* Company Name */}
                             <div>
