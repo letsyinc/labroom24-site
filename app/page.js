@@ -82,7 +82,7 @@ const LandingPage = () => {
                     </p>
 
                     {/* AI Accountability Score Visualization */}
-                    <div className="relative inline-block mb-16">
+                    <div className="flex justify-center mb-16">
                         {/* <img 
                             src="/section_3.png" 
                             alt="AI Accountability Score 98%" 
@@ -92,8 +92,8 @@ const LandingPage = () => {
                       <Image
                           src="/section_3.png"
                           alt="AI Accountability Score 98%"
-                          width={256}
-                          height={256}
+                          width={192}
+                          height={192}
                           className="w-48 h-48 sm:w-64 sm:h-58 object-contain mx-auto score-shield"
                           onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/256x256/001F3F/11C8A9?text=Score"; }}
                           priority
